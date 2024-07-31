@@ -13,6 +13,10 @@ const userSchema = new Schema({
   telefono: {
     type: String,
   },
+  password: { // Agrega el campo password
+    type: String,
+    required: true,
+  },
   created_at: {
     type: Date,
     default: Date.now,

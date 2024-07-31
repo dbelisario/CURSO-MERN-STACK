@@ -6,7 +6,12 @@ const cors = require('cors');
 const puerto = 5000;
 
 // habilitar cors
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // Permite solicitudes desde localhost:3000
+  methods: 'GET, POST, PUT, DELETE', // Permite los métodos HTTP que deseas
+  allowedHeaders: 'Content-Type, Authorization', // Permite los encabezados necesarios
+  credentials: true // Permite que las cookies se envíen con las solicitudes 
+}));
 
 // Middleware para el análisis del cuerpo de las peticiones (JSON)
 app.use(express.json());
