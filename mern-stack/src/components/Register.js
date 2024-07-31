@@ -10,7 +10,7 @@ function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Evita el comportamiento predeterminado del envío del formulario
     try {
       const response = await axios.post("/api/user/register", {
         name,
@@ -36,7 +36,7 @@ function Register() {
           <div className="card">
             <div className="card-header">Registro</div>
             <div className="card-body">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}> {/* Agrega el evento onSubmit */}
                 <div className="form-group">
                   <label htmlFor="name">Nombre:</label>
                   <input
